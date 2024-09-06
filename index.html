@@ -15,6 +15,7 @@
 
 </head>
 <body>
+    <!-- Nav Bar -->
     <nav>
         <ul class="sidebar">
             <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="Black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
@@ -30,12 +31,13 @@
             <li class="hideOnMobile"><a href="#">Experience</a></li>
             <li class="hideOnMobile"><a href="#">Education</a></li>
             <li class="hideOnMobile"><a href="#">Projects</a></li>
-            <li class="hideOnMobile"><a href="#">Resume</a></li>
+            <li class="hideOnMobile"><a href="assets/files/BenHolbrookResume_Sept5_24.pdf">Resume</a></li>
             <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="Black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
     </nav>
 
 
+    <!-- Java Script Section with Logic for the nav bar -->
     <script>
         function showSidebar(){
             const sidebar = document.querySelector('.sidebar');
