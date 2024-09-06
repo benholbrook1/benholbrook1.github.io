@@ -2,58 +2,50 @@
 <html lang="en">
 <head>
 
+    <!-- Meta Data -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/body.css">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
 
+    <!-- Website Title -->
     <title>Ben Holbrook</title>
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-
     <nav>
-        <div class="logo">
-            <p>Ben Holbrook</p>
-        </div>
+        <ul class="sidebar">
+            <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="Black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Experience</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Resume</a></li>
+        </ul>
         <ul>
-            <li><a href="#About">About</a></li>
-            <li><a href="#WorkExp">Work Experience</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#Education">Education</a></li>
-            <li><a href="TODO">Resume</a></li>
+            <li><a href="#">Ben Holbrook</a></li>
+            <li class="hideOnMobile"><a href="#">About</a></li>
+            <li class="hideOnMobile"><a href="#">Experience</a></li>
+            <li class="hideOnMobile"><a href="#">Education</a></li>
+            <li class="hideOnMobile"><a href="#">Projects</a></li>
+            <li class="hideOnMobile"><a href="#">Resume</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="Black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
         </ul>
     </nav>
 
-    <main>
 
-        <h2><a id="About"></a>About</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?
-        </p>
-        <h2><a id="WorkExp"></a>Work Experience</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?
-        </p>
-        <h2><a id="Projects"></a>Projects</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?
-        </p>
-        <h2><a id="Education"></a>Education</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, provident. Hic amet inventore sit ad praesentium a iste debitis tenetur perspiciatis maiores commodi minus quisquam suscipit placeat dignissimos, obcaecati voluptas? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, quaerat esse nam ratione illum rerum debitis eveniet repudiandae distinctio aut iste perferendis adipisci saepe quisquam!<br><br> Voluptas nulla dolores quo soluta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia sequi pariatur officiis labore nisi tempora consequatur incidunt veniam! Consequatur quisquam commodi vero enim doloremque quod nihil autem! Iste, sint.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque maiores eaque voluptas at, incidunt perferendis accusamus non voluptatibus deleniti reprehenderit nesciunt dicta dolorem eos minus excepturi quibusdam molestiae dolores facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae culpa distinctio suscipit, numquam eaque illo tempora architecto alias ea dolorem aut ab? Incidunt itaque fuga officia cum, qui architecto neque?<br><br>
-        </p>
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex'
+        }
 
-
-    </main>
-
+        function hideSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none'
+        }
+    </script>
 </body>
 </html>
