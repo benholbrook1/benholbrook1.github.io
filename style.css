@@ -5,7 +5,8 @@
 
 body{
     min-height: 100vh;
-    background-image: url(assets/images/background-image.jpg);
+    /* background-image: url(assets/images/new-background.avif); */
+    background-color: rgb(61, 60, 60);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +14,7 @@ body{
 }
 
 nav{
-    background-color: white;
+    background-color: rgb(5,96,167); /* Same Blue as Resume */
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
@@ -35,11 +36,11 @@ nav a{
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: black;
+    color: rgb(225, 223, 223);
 }
 
 nav a:hover{
-    background-color: #f0f0f0;
+    background-color: rgb(6, 110, 190);
 }
 
 nav li:first-child{
@@ -73,6 +74,118 @@ nav li:first-child{
 .menu-button{
     display: none;
 }
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* About Section */
+#about p {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+/* Experience Section */
+.work-experience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.job-info h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.date-button {
+    text-align: right;
+}
+
+.date-range {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.report-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Education Section */
+.education-details {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.education-details h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.education-details p {
+    margin-top: 5px;
+    color: var(--accent-color);
+}
+
+/* Projects Section */
+.project {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.project p {
+    margin-top: 10px;
+    color: var(--accent-color);
+}
+
 
 @media(max-width:850px){
     .hideOnMobile{
