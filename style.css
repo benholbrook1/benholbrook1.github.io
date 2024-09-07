@@ -122,7 +122,7 @@ h2 {
 
 .job-info h3 {
     margin: 0;
-    color: var(--text-color);
+    color: black;
 }
 
 .date-button {
@@ -131,17 +131,17 @@ h2 {
 
 .date-range {
     margin-bottom: 10px;
-    font-style: italic;
     color: var(--accent-color);
 }
 
 .report-button {
-    background-color: var(--primary-color);
-    color: white;
+    border-color: black;
+    color: black;
     padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    position: center;
 }
 
 .report-button:hover {
