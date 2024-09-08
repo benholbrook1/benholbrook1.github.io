@@ -121,7 +121,7 @@ h2 {
 }
 
 .job-info h3 {
-    margin: 0;
+    margin-bottom: 10px;
     color: black;
 }
 
@@ -130,22 +130,25 @@ h2 {
 }
 
 .date-range {
-    margin-bottom: 10px;
-    color: var(--accent-color);
+    margin-bottom:25px;
 }
 
 .report-button {
-    border-color: black;
-    color: black;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    position: center;
+    background-color: #0560A7; /* Blue background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth hover effects */
 }
 
 .report-button:hover {
-    background-color: var(--secondary-color);
+    background-color: #046DBF; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* Education Section */
