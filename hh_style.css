@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #f9f9f9; /* Light grey background */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: rgb(5,96,167); /* Same Blue as Resume */
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(225, 223, 223);
+}
+
+nav a:hover{
+    background-color: rgb(6, 110, 190);
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for content */
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p, ul, ol {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 25px;
+    padding-top: 5;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0560A7;
+    color: white;
+}
+
+.report-button {
+    background-color: #0560A7; /* Blue background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth hover effects */
+}
+
+.report-button:hover {
+    background-color: #046DBF; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+section ol li {
+    font-weight: bold;
+}
+
+@media(max-width:850px){
+    .hideOnMobile{
+        display: none;
+    }
+}
+
+@media(max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+}
