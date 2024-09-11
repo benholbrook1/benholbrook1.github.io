@@ -12,31 +12,35 @@ body{
     padding: 0;
 }
 
-nav{
+nav {
     background-color: rgb(5,96,167); /* Same Blue as Resume */
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    height: auto; /* Adjust height automatically based on content */
+    padding: 0;   /* Remove extra padding */
 }
 
-nav ul{
-    width: 100%;
+nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 50px; /* Make the height consistent with the content */
+    padding: 0;   /* Remove padding from the list */
 }
 
-nav li{
-    height: 50px;
+nav li {
+    height: 50px; /* Adjust the height to match the button */
 }
 
-nav a{
-    height: 100%;
-    padding: 0 30px;
-    text-decoration: none;
+nav a {
+    padding: 0 20px; /* Adjust padding for the anchor */
     display: flex;
     align-items: center;
-    color: rgb(225, 223, 223);
+    height: 100%; /* Ensure the link takes up the full height of the li */
+    color: rgb(225, 223, 223); /* Text color */
+    text-decoration: none;
 }
+
 
 nav a:hover{
     background-color: rgb(6, 110, 190);
