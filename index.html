@@ -1,122 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Meta Data -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-
-    <!-- Website Title -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Holbrook</title>
-
-    <!-- Style Sheets -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
-    <!-- Nav Bar -->
-    <nav>
-        <ul class="sidebar">
-            <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="White"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="assets/files/BenHolbrookResume_Sept5_24.pdf">Resume</a></li> <!-- NOTE: if chaniging this link, we also need to change the link in the Hamburger menu bar-->
-        </ul>
-        <ul>
-            <li><a href="index.html">Ben Holbrook</a></li>
-            <li class="hideOnMobile"><a href="#about">About</a></li>
-            <li class="hideOnMobile"><a href="#experience">Experience</a></li>
-            <li class="hideOnMobile"><a href="#education">Education</a></li>
-            <li class="hideOnMobile"><a href="#projects">Projects</a></li>
-            <li class="hideOnMobile"><a href="assets/files/BenHolbrookResume_Sept5_24.pdf">Resume</a></li> <!-- NOTE: if chaniging this link, we also need to change the link in the regular menu bar-->
-            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="White"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul>
-    </nav>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About</h2>
-        <p>
-            Hi. My name is Ben Holbrook, and I am a 3rd-year software engineering student. This website showcases my projects and experiences in software development. 
-            As a co-op student, I have had the opportunity to apply my technical skills across various companies and industries.
-        </p>
-
-        <p style="font-weight: bold;">
-            <br><br><br>
-            This part of my website is still under construction but feel free to look around as I work on developing the site
-        </p>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <!-- Home Hardware -->
-        <div class="work-experience">
-            <div class="logo-title">
-                <img src="assets/images/hh-logo.png" alt="HH Logo" class="company-logo">
-                <div class="job-info">
-                    <h3>Retail Helpline Analyst</h3>
-                    <p class="company-name">Home Hardware</p>
+<!-- -------------------header------------------- -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/BH.png" class="logo">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work-terms">Experience</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#">Resume</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Software Engineer</p>
+            <h1>Hi, I'm <span>Ben</span> Holbrook</h1>
+        </div>
+    </div>
+</div>
+<!-- -------------------about------------------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I'm a third-year Software Engineering student passionate about creating efficient,
+                    and effective solutions. With expertise in a variety of programming languages and
+                    practices, I love to solve complex problems and deliver results. I’m always
+                    eager to collaborate, learn new technologies, and bring ideas to life.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Languages</span><br>Python, SQL, C, Java</li>
+                        <li><span>Development Tools</span><br>Git, Jira, Docker</li>
+                        <li><span>Web Development</span><br>HTML, CSS, Javascript</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>January 2025 - Current</span><br>Technical Account Managment - Part-Time @ Pepper</li>
+                        <li><span>September 2024 - December 2024</span><br>Technical Account Managment - Co-op @ Pepper</li>
+                        <li><span>April 2024 - August 2024</span><br>Retail Helpline Analyst - Co-op @ Home Hardware</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Bachelor of Computing, Software Engineering (Co-op)</span><br>University of Guelph | 2022 - Present</li>
+                    </ul>
                 </div>
             </div>
-            <div class="date-button">
-                <p class="date-range">April 2024 - August 2024</p>
-                <a href="reports/homehardware.html" class="report-button">Term Report</a>
+        </div>
+    </div>
+</div>
+<!-- -------------------work-terms------------------- -->
+<div id="work-terms">
+    <div class="container">
+        <h1 class="sub-title">Co-op Work Terms</h1>
+        <div class="work-terms-list">
+            <div>
+                <h2>Retail Helpline Analyst | Summer 2024</h2>
+                <p>As a Retail Helpline Analyst at Home Hardware, I provided technical support and troubleshooting assistance for over 1500 retail stores, ensuring seamless operation of point-of-sale systems and back-end software. I collaborated with team members to resolve issues efficiently, delivering excellent service.</p>
+                <a href="work-term-1.html">Work Term Report</a>
+            </div>
+            <div>
+                <h2>Technical Account Management Co-op | Fall 2024</h2>
+                <p>
+                    As a Technical Account Manager at Pepper, I acted as the primary technical liaison between clients and the company, ensuring successful implementation and ongoing support of our software solutions. I collaborated with cross-functional teams to address client needs, resolve technical challenges, and deliver exceptional customer experiences.</p>
+                <a href="work-term-2.html">Work Term Report</a>
             </div>
         </div>
-        <!-- Pepper -->
-        <div class="work-experience">
-            <div class="logo-title">
-                <img src="assets/images/pepper-logo.png" alt="Pepper Logo" class="company-logo">
-                <div class="job-info">
-                    <h3>Technical Account Manager</h3>
-                    <p class="company-name">Pepper</p>
+    </div>
+</div>
+<!-- -------------------potfolio------------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="project-list">
+            <div class="work">
+                <img src="images/chess-board.jpg">
+                <div class="layer">
+                    <h3>Chess Game</h3>
+                    <p>Developed a chess game using Java following object oriented methodolgies, complete with a graphical interface</p>
+                    <a href="https://github.com/benholbrook1/Java-Chess"><img src="images/link.webp"></a>
                 </div>
             </div>
-            <div class="date-button">
-                <p class="date-range">September 2024 - Present</p>
-                <a href="#" class="report-button">Term Report</a>
+            <div class="work">
+                <img src="images/web-design.jpg">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>This is the website you are looking at now, developed using HTML, CSS and Javascript</p>
+                    <a href="https://github.com/benholbrook1/portfolio"><img src="images/link.webp"></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/billiards.webp">
+                <div class="layer">
+                    <h3>Billiards Pool Game</h3>
+                    <p>
+                        Table Top Pool Game, hosted on a webpage though a Python web server. Complete with a custom physics library written in C 
+                        and a backend database using SQLite.
+                    </p>
+                    <a href="#"><img src="images/link.webp"></a>
+                </div>
             </div>
         </div>
-    </section>
+        <a href="#" class="button">See More</a>
+    </div>
+</div>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-details">
-            <h3>Bachelor of Computing, Software Engineering</h3>
-            <p>University of Guelph, 2022 - Present</p>
-        </div>
-    </section>
+ <!-- -------------------contact------------------- -->
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of the project... TODO</p>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <div class="contacts">
+                    <div class="contact-block">
+                        <img src="images/email-icon.png">
+                        <p>holbrook@uoguelph.ca</p>
+                    </div>
+                    <!-- <div class="contact-block">        don't want this public
+                        <img src="images/phone-icon.png">
+                        <p>226-792-8781</p>
+                    </div> -->
+                    <div class="contact-block">
+                        <img src="images/github-icon.png">
+                        <p>github.com/benholbrook1</p>
+                    </div>
+                    <div class="contact-block">
+                        <img src="images/linked-in-icon.png">
+                        <p>linkedin.com/in/holbrook-ben</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of the project... TODO</p>
-        </div>
-    </section>
+    </div>
+</div>
+    
 
-    <!-- Java Script Section with Logic for the nav bar -->
-    <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'flex'
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
         }
-
-        function hideSideBar(){
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'none'
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
         }
-    </script>
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 </body>
 </html>
+
+
+
+
+<!-- How to make a portfolio website using HTML CSS JS | Complete Responsive Website Design -->
