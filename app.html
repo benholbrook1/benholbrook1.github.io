@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Booking App | Ben Holbrook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#080808;          
+      --text:#ffffff;        
+      --muted:#ababab;      
+      --panel:#161616;      
+      --line:#262626;         
+      --brand:#008cff;        
+      --brand-2:#0371cb;    
+      --radius:12px;          
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--text); text-decoration:none; position:relative}
+    a:hover{color:var(--text)}
+    a.underline{color:var(--text)}
+    a.underline::after{content:''; position:absolute; left:0; bottom:-6px; height:3px; width:0; background:var(--brand); transition:width .5s}
+    a.underline:hover::after{width:100%}
+
+    .container{width:min(1100px,90vw); margin:0 auto; padding:10px 0}
+
+    #header{width:100%; min-height:60vh; background-size:cover; background-position:center; display:grid; align-items:center; border-bottom:1px solid var(--line)}
+    nav{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .logo{width:140px}
+    nav ul{list-style:none; padding:0; margin:0}
+    nav ul li{display:inline-block; list-style:none; margin:10px 20px}
+    nav ul li a{color:#fff; font-size:18px}
+    nav ul li a::after{content:''; width:0; height:3px; background:var(--brand); position:absolute; left:0; bottom:-6px; transition:.5s}
+    nav ul li a:hover::after{width:100%}
+
+    .header-text{margin-top:6vh;}
+    .header-text p{font-size:20px; color:var(--muted)}
+    .header-text h1{font-size:56px; margin-top:16px; line-height:1.1}
+    .header-text h1 span{color:var(--brand)}
+
+    section{padding:56px 0}
+    .sub-title{font-size:42px; font-weight:600; color:#fff; margin-bottom:18px}
+    .muted{color:var(--muted)}
+
+    .row{display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap}
+    .col-40{flex:1 1 360px; max-width:420px}
+    .col-60{flex:1 1 520px}
+    .panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px}
+    .bullets{margin:14px 0 0; padding-left:18px}
+    .bullets li{margin:6px 0; color:var(--muted)}
+    .bullets li span{color:var(--brand-2); font-weight:600}
+
+    .scroller{display:grid; gap:18px}
+    .screen-row{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 1fr); gap:20px; overflow-x:auto; padding:6px 2px 12px; scroll-snap-type:x mandatory}
+    .work{position:relative; border-radius:10px; overflow:hidden; background:#0d0d0d; border:1px solid var(--line); scroll-snap-align:start}
+    .work img{width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s}
+    .layer{position:absolute; inset:auto 0 0 0; height:0; background:linear-gradient(rgba(0,0,0,0.6), var(--brand)); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:0 24px; color:#fff; transition:height .6s}
+
+    .grid-cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px; margin-top:24px}
+    .card{background:#262626; padding:24px; border-radius:10px; border:1px solid var(--line); transition:transform .4s, background .4s}
+    .card h3{font-size:22px; margin:0 0 10px}
+    .card p{margin:0; color:#d6d6d6}
+    .card:hover{transform:translateY(-6px); background:var(--brand)}
+    .card:hover p{color:#0b0b0b}
+
+    .list{display:grid; gap:12px}
+    .list .panel{border-style:dashed}
+
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+    .button{display:inline-block; border:1px solid var(--brand); color:#fff; padding:12px 18px; border-radius:6px; transition:background .4s}
+    .button:hover{background:var(--brand)}
+
+    footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); text-align:center; margin-top:24px}
+
+    @media (max-width: 700px){
+      .header-text h1{font-size:40px}
+      .sub-title{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+<!-- -------------------header------------------- -->
+   <div id="header">
+    <div class="container">
+      <nav>
+        <a href="index.html" aria-label="Home"><img src="images/BH.png" class="logo" alt="Ben Holbrook logo" /></a>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#work-terms">Experience</a></li>
+          <li><a href="index.html#portfolio">Projects</a></li>
+          <li><a href="index.html#contact">Contact Me</a></li>
+          <li><a href="images/resume_jan25.pdf">Resume</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>Personal Project</p>
+        <h1>Fitness <span>Booking</span> App</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------- Overview ------------------- -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-40">
+          <div class="work" style="aspect-ratio:9/19.5">
+            <img src="images/app-home.png" alt="App hero screenshot" />
+          </div>
+        </div>
+        <div class="col-60">
+          <h2 class="sub-title">Overview</h2>
+          <div class="panel">
+            A cross‑platform mobile app for discovering gyms and booking classes. Built with a <b>Django REST API</b> and a <b>React Native</b> (Expo) client. Features real‑time availability, secure payments, and a smooth UX for browsing, scheduling, and check‑ins.
+          </div>
+          <ul class="bullets">
+            <li><span>Authentication</span> — JWT with refresh tokens</li>
+            <li><span>Features</span> — Class search, filters, bookings & cancellations</li>
+            <li><span>Admin</span> — Dashboard for schedules and attendance</li>
+            <li><span>Notifications</span> — Push updates for bookings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------- Screens ------------------- -->
+  <section id="screens">
+    <div class="container">
+      <h2 class="sub-title">Screens</h2>
+      <div class="scroller">
+        <div class="screen-row" aria-label="Scroll to see more screens">
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-home.png" alt="Discover classes" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-discover.png" alt="Class details" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-map.png" alt="Booking flow" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-bookings.png" alt="Schedule" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-profile.png" alt="Check‑in" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------- Tech Stack ------------------- -->
+  <section id="tech">
+    <div class="container">
+      <h2 class="sub-title">Tech Stack</h2>
+      <div class="grid-cards">
+        <div class="card"><h3>Frontend</h3><p>React Native (Expo), TypeScript, React Query, Expo Router, i18next (with ICU), expo-localization</p></div>
+        <div class="card"><h3>Backend</h3><p>Django REST Framework, Django Admin Page, PostgreSQL</p></div>
+        <div class="card"><h3>Operations</h3><p>Dockerized development environment, Postman API environment</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------- Key Design Choices ------------------- -->
+  <section>
+    <div class="container">
+      <h2 class="sub-title">Key Design Choices</h2>
+      <div class="list">
+        <div class="panel">JWT with <b>rotating refresh tokens</b> and short‑lived access tokens.</div>
+        <div class="panel"><b>Server‑driven pagination & filtering</b> for large class catalogs.</div>
+        <div class="panel"><b>i18next framework</b> to manage different app translations</div>
+        <div class="panel"><b>Geocoding</b> with Google Maps API to display studio locations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------- Challenges & Learnings ------------------- -->
+  <section id="learnings">
+    <div class="container">
+      <h2 class="sub-title">Challenges & Learnings</h2>
+      <div class="grid-cards">
+        <div class="card"><h3>Timezone Management</h3><p>Store all timezones in the datebase in UTC and convert to local timezones when displaying to user</p></div>
+        <div class="card"><h3>UX</h3><p>Two‑tap booking flow with clear capacity states.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Want a deeper dive or a walkthrough? <a class="underline" href="mailto:holbrook@uoguelph.com">Email me</a>.</div>
+  </footer>
+</body>
+</html>
