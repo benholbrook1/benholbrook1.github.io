@@ -166,6 +166,7 @@
         <div class="panel"><b>Server‑driven pagination & filtering</b> for large class catalogs.</div>
         <div class="panel"><b>i18next framework</b> to manage different app translations</div>
         <div class="panel"><b>Geocoding</b> with Google Maps API to display studio locations</div>
+        <div class="panel">Stored analytics data in seperate database tables using <b>celery tasks</b> to update the database at regular intervals</div>
       </div>
     </div>
   </section>
@@ -176,9 +177,6 @@
       <h2 class="sub-title">Challenges & Learnings</h2>
       <div class="grid-cards">
         <div class="card"><h3>Timezone Management</h3><p>Store all timezones in the datebase in UTC and convert to local timezones when displaying to user</p></div>
-        <!-- <div class="card"><h3>Geocoding accuracy</h3><p>Was not receiving great resuts with the Google Maps API geocoding, especially in forign countries. Implemented a
-            tool on the admin page to allow manual adjustment of studio's map pin</p></div>
-        </p></div> -->
       </div>
     </div>
   </section>
