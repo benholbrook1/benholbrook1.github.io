@@ -1,71 +1,180 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+@import url("tokens.css");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background: #080808;
-    color: #fff;
+html {
+  scroll-behavior: smooth;
 }
 
-.container{
-    padding: 0px 10% 20px 10%;   
+body {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  padding-bottom: 3rem;
 }
 
-.logo{
-    width: 140px;   
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.sub-title{
-    font-size: 60px;
-    font-weight: 600;
-    color: #fff;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-.title{
-    padding-top: 60px;
-    padding-bottom: 30px;
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.75rem 1rem;
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
-.text{
-    color: #ababab;
-    line-height: 1.6;
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
 
-
-.image a img{
-    width: 50%;
-    border-radius: 10px;
-    display: block;
-    margin: auto;
+.container {
+  width: var(--container);
+  margin: 0 auto;
+  padding: 0 4vw 2.5rem;
 }
 
-.image{
-    padding: 30px;
+.logo {
+  width: min(120px, 40vw);
+  height: auto;
+  display: block;
 }
 
-.image p{
-    color: #ababab;
-    text-align: center;
-    padding: 4px;
+.wt-hero {
+  padding: 1.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-
-ol{
-    list-style-position: inside;
+.wt-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-ol li{
-    color: #fff;
-    font-weight: 400;
+.wt-logo {
+  line-height: 0;
 }
 
-ul{
-    list-style-position: inside;
+.wt-back {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-ul li{
-    line-height: 2.1;
+.wt-back:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+}
+
+.page-title {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.text {
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+.text.intro p {
+  margin: 0;
+}
+
+.wt-section {
+  padding: 2.5rem 0 1rem;
+  scroll-margin-top: 1rem;
+}
+
+.section-title {
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.image {
+  padding: 1.25rem 0;
+}
+
+.image a {
+  display: block;
+  line-height: 0;
+}
+
+.image a img {
+  width: min(100%, 480px);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0 auto;
+}
+
+.image p {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+
+ol,
+ul {
+  list-style-position: outside;
+  padding-left: 1.35rem;
+  max-width: 65ch;
+}
+
+ol li,
+ul li {
+  color: var(--text-muted);
+  margin: 0.35rem 0;
+}
+
+#goals .text ol > li {
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+#goals .text ol > li:first-child {
+  margin-top: 0;
+}
+
+#goals .text p {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin: 0.5rem 0 0;
 }

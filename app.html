@@ -4,98 +4,24 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fitness class booking app — React Native, Django REST API, JWT auth, and PostgreSQL. Project by Ben Holbrook." />
   <title>Fitness Booking App | Ben Holbrook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#080808;          
-      --text:#ffffff;        
-      --muted:#ababab;      
-      --panel:#161616;      
-      --line:#262626;         
-      --brand:#008cff;        
-      --brand-2:#0371cb;    
-      --radius:12px;          
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--text); line-height:1.6}
-    a{color:var(--text); text-decoration:none; position:relative}
-    a:hover{color:var(--text)}
-    a.underline{color:var(--text)}
-    a.underline::after{content:''; position:absolute; left:0; bottom:-6px; height:3px; width:0; background:var(--brand); transition:width .5s}
-    a.underline:hover::after{width:100%}
-
-    .container{width:min(1100px,90vw); margin:0 auto; padding:10px 0}
-
-    #header{width:100%; min-height:60vh; background-size:cover; background-position:center; display:grid; align-items:center; border-bottom:1px solid var(--line)}
-    nav{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap}
-    .logo{width:140px}
-    nav ul{list-style:none; padding:0; margin:0}
-    nav ul li{display:inline-block; list-style:none; margin:10px 20px}
-    nav ul li a{color:#fff; font-size:18px}
-    nav ul li a::after{content:''; width:0; height:3px; background:var(--brand); position:absolute; left:0; bottom:-6px; transition:.5s}
-    nav ul li a:hover::after{width:100%}
-
-    .header-text{margin-top:6vh;}
-    .header-text p{font-size:20px; color:var(--muted)}
-    .header-text h1{font-size:56px; margin-top:16px; line-height:1.1}
-    .header-text h1 span{color:var(--brand)}
-
-    section{padding:56px 0}
-    .sub-title{font-size:42px; font-weight:600; color:#fff; margin-bottom:18px}
-    .muted{color:var(--muted)}
-
-    .row{display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap}
-    .col-40{flex:1 1 360px; max-width:420px}
-    .col-60{flex:1 1 520px}
-    .panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px}
-    .bullets{margin:14px 0 0; padding-left:18px}
-    .bullets li{margin:6px 0; color:var(--muted)}
-    .bullets li span{color:var(--brand-2); font-weight:600}
-
-    .scroller{display:grid; gap:18px}
-    .screen-row{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px, 1fr); gap:20px; overflow-x:auto; padding:6px 2px 12px; scroll-snap-type:x mandatory}
-    .work{position:relative; border-radius:10px; overflow:hidden; background:#0d0d0d; border:1px solid var(--line); scroll-snap-align:start}
-    .work img{width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s}
-    .layer{position:absolute; inset:auto 0 0 0; height:0; background:linear-gradient(rgba(0,0,0,0.6), var(--brand)); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:0 24px; color:#fff; transition:height .6s}
-
-    .grid-cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px; margin-top:24px}
-    .card{background:#262626; padding:24px; border-radius:10px; border:1px solid var(--line); transition:transform .4s, background .4s}
-    .card h3{font-size:22px; margin:0 0 10px}
-    .card p{margin:0; color:#d6d6d6}
-    .card:hover{transform:translateY(-6px); background:var(--brand)}
-    .card:hover p{color:#0b0b0b}
-
-    .list{display:grid; gap:12px}
-    .list .panel{border-style:dashed}
-
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
-    .button{display:inline-block; border:1px solid var(--brand); color:#fff; padding:12px 18px; border-radius:6px; transition:background .4s}
-    .button:hover{background:var(--brand)}
-
-    footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); text-align:center; margin-top:24px}
-
-    @media (max-width: 700px){
-      .header-text h1{font-size:40px}
-      .sub-title{font-size:34px}
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app-page.css">
 </head>
 <body>
-<!-- -------------------header------------------- -->
-   <div id="header">
+  <div id="header">
     <div class="container">
-      <nav>
-        <a href="index.html" aria-label="Home"><img src="images/BH.png" class="logo" alt="Ben Holbrook logo" /></a>
+      <nav aria-label="Primary">
+        <a href="index.html" aria-label="Home"><img src="images/BH.png" class="logo" alt="Ben Holbrook logo" width="140" height="56" /></a>
         <ul>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#work-terms">Experience</a></li>
           <li><a href="index.html#portfolio">Projects</a></li>
           <li><a href="index.html#contact">Contact Me</a></li>
-          <li><a href="images/resume_sept25.pdf">Resume</a></li>  <!-- !!! UPDATE HERE AND ON HOMEPAGE -->
+          <li><a href="images/resume_sept25.pdf">Resume</a></li>
         </ul>
       </nav>
       <div class="header-text">
@@ -105,7 +31,6 @@
     </div>
   </div>
 
-  <!-- ------------------- Overview ------------------- -->
   <section>
     <div class="container">
       <div class="row">
@@ -129,23 +54,21 @@
     </div>
   </section>
 
-  <!-- ------------------- Screens ------------------- -->
   <section id="screens">
     <div class="container">
       <h2 class="sub-title">Screens</h2>
       <div class="scroller">
         <div class="screen-row" aria-label="Scroll to see more screens">
-          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-home.PNG" alt="home" /></div>
-          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-discover.PNG" alt="disover classes" /></div>
-          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-map.PNG" alt="explore classes map view" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-home.PNG" alt="Home" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-discover.PNG" alt="Discover classes" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-map.PNG" alt="Explore classes map view" /></div>
           <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-bookings.PNG" alt="Schedule classes" /></div>
-          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-profile.PNG" alt="profile screen" /></div>
+          <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-profile.PNG" alt="Profile screen" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ------------------- Tech Stack ------------------- -->
   <section id="tech">
     <div class="container">
       <h2 class="sub-title">Tech Stack</h2>
@@ -157,7 +80,6 @@
     </div>
   </section>
 
-  <!-- ------------------- Key Design Choices ------------------- -->
   <section>
     <div class="container">
       <h2 class="sub-title">Key Design Choices</h2>
@@ -166,24 +88,23 @@
         <div class="panel"><b>Server‑driven pagination & filtering</b> for large class catalogs.</div>
         <div class="panel"><b>i18next framework</b> to manage different app translations</div>
         <div class="panel"><b>Geocoding</b> with Google Maps API to display studio locations</div>
-        <div class="panel">Stored analytics data in seperate database tables using <b>celery tasks</b> to update the database at regular intervals</div>
+        <div class="panel">Stored analytics data in separate database tables using <b>celery tasks</b> to update the database at regular intervals</div>
       </div>
     </div>
   </section>
 
-  <!-- ------------------- Challenges & Learnings ------------------- -->
   <section id="learnings">
     <div class="container">
       <h2 class="sub-title">Challenges & Learnings</h2>
       <div class="grid-cards">
-        <div class="card"><h3>Timezone Management</h3><p>Store all timezones in the datebase in UTC and convert to local timezones when displaying to user</p></div>
+        <div class="card"><h3>Timezone Management</h3><p>Store all timezones in the database in UTC and convert to local timezones when displaying to user</p></div>
         <div class="card"><h3>Analytics</h3><p>Created 2 separate Django models to store analytics data. Created one celery task to update a daily snapshot every minute and another task that runs nightly to move that data into a larger table which store daily recaps</p></div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">Want a deeper dive or a walkthrough? <a class="underline" href="mailto:holbrook@uoguelph.com">Email me</a>.</div>
+    <div class="container">Want a deeper dive or a walkthrough? <a class="underline" href="mailto:holbrook@uoguelph.ca">Email me</a>.</div>
   </footer>
 </body>
 </html>

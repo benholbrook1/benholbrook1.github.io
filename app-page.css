@@ -1,0 +1,301 @@
+@import url("tokens.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a.underline {
+  color: var(--text);
+}
+
+a.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.5s;
+}
+
+a.underline:hover::after {
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(1100px, 90vw);
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+#header {
+  width: 100%;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 140px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-family: var(--font-display);
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.header-text {
+  margin-top: 6vh;
+}
+
+.header-text p {
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+.header-text h1 {
+  font-family: var(--font-display);
+  font-size: 56px;
+  margin-top: 16px;
+  line-height: 1.1;
+}
+
+.header-text h1 span {
+  color: var(--accent);
+}
+
+section {
+  padding: 56px 0;
+}
+
+.sub-title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.col-40 {
+  flex: 1 1 360px;
+  max-width: 420px;
+}
+
+.col-60 {
+  flex: 1 1 520px;
+}
+
+.panel {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.bullets {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.bullets li {
+  margin: 6px 0;
+  color: var(--text-muted);
+}
+
+.bullets li span {
+  color: var(--accent-subtle);
+  font-weight: 600;
+}
+
+.scroller {
+  display: grid;
+  gap: 18px;
+}
+
+.screen-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 20px;
+  overflow-x: auto;
+  padding: 6px 2px 12px;
+  scroll-snap-type: x mandatory;
+}
+
+.work {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  scroll-snap-align: start;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  background: var(--bg-elevated);
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: transform 0.4s, border-color 0.4s;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.card p {
+  margin: 0;
+  color: #d6d6d6;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.card:hover p {
+  color: var(--text);
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.list .panel {
+  border-style: dashed;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  transition: background 0.4s;
+  font-family: var(--font-display);
+}
+
+.button:hover {
+  background: var(--accent);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 24px;
+}
+
+@media (max-width: 700px) {
+  .header-text h1 {
+    font-size: 40px;
+  }
+
+  .sub-title {
+    font-size: 34px;
+  }
+}

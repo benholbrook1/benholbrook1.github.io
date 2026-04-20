@@ -4,48 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I'm a fourth-year Software Engineering student passionate about creating innovative and effective solutions. With expertise in Python, SQL, Java, TypeScript, React Native, and more, I love solving complex problems and collaborating on impactful projects." />
-    <title>Ben Holbrook</title>
+    <meta name="description" content="Ben Holbrook — Software Engineering student at the University of Guelph. Python, SQL, TypeScript, React Native, and full-stack projects." />
+    <title>Ben Holbrook | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- -------------------header------------------- -->
-<div id="header">
+<a class="skip-link" href="#about">Skip to content</a>
+<header class="site-header">
     <div class="container">
-        <nav>
-            <img src="images/BH.png" class="logo">
+        <nav aria-label="Primary">
+            <a href="#top" aria-label="Ben Holbrook home"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work-terms">Experience</a></li>
                 <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="images/resume_sept25.pdf">Resume</a></li>    <!-- !!! UPDATE HERE AND ON HOMEPAGE -->
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="images/resume_sept25.pdf">Resume</a></li>
             </ul>
         </nav>
+    </div>
+</header>
+
+<div class="hero" id="top">
+    <div class="container">
         <div class="header-text">
             <p>Software Engineer</p>
             <h1>Hi, I'm <span>Ben</span> Holbrook</h1>
         </div>
     </div>
 </div>
-<!-- -------------------about------------------- -->
+
 <div id="about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/user.jpg">
+                <img src="images/user.jpg" alt="Portrait of Ben Holbrook">
             </div>
             <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
+                <h2 class="sub-title">About Me</h2>
                 <p>I'm a fourth-year Software Engineering student passionate about creating innovative,
                     and effective solutions. With expertise in a variety of programming languages and
-                    practices, I love to solve complex problems and deliver results. I’m always
+                    practices, I love to solve complex problems and deliver results. I'm always
                     eager to collaborate, learn new technologies, and bring ideas to life.</p>
-                
+
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills', this)">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
+                    <p class="tab-links" onclick="opentab('education', this)">Education</p>
                 </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
@@ -59,7 +67,7 @@
                     <ul>
                         <li><span>April 2025 - August 2025</span><br>Technical Support Engineer - Co-op @ Pepper</li>
                         <li><span>January 2025 - April 2025</span><br>Technical Support Engineer - Part-Time @ Pepper</li>
-                        <li><span>September 2024 - December 2024</span><br>Technical Account Managment - Co-op @ Pepper</li>
+                        <li><span>September 2024 - December 2024</span><br>Technical Account Management - Co-op @ Pepper</li>
                         <li><span>April 2024 - August 2024</span><br>Retail Helpline Analyst - Co-op @ Home Hardware</li>
                     </ul>
                 </div>
@@ -72,89 +80,93 @@
         </div>
     </div>
 </div>
-<!-- -------------------work-terms------------------- -->
+
 <div id="work-terms">
     <div class="container">
-        <h1 class="sub-title">Co-op Work Terms</h1>
+        <h2 class="sub-title">Co-op Work Terms</h2>
         <div class="work-terms-list">
-            <div>
-                <h2>Retail Helpline Analyst | Summer 2024</h2>
+            <article>
+                <h3>Retail Helpline Analyst | Summer 2024</h3>
                 <p>As a Retail Helpline Analyst at Home Hardware, I provided technical support and troubleshooting assistance for over 1500 retail stores, ensuring seamless operation of point-of-sale systems and back-end software. I collaborated with team members to resolve issues efficiently, delivering excellent service.</p>
-                <a href="work-term-1.html">Work Term Report</a>
-            </div>
-            <div>
-                <h2>Technical Account Management Co-op | Fall 2024</h2>
+                <a href="work-term-1.html">Work term report</a>
+            </article>
+            <article>
+                <h3>Technical Account Management Co-op | Fall 2024</h3>
                 <p>
                     As a Technical Account Manager at Pepper, I acted as the primary technical liaison between clients and the company, ensuring successful implementation and ongoing support of our software solutions. I collaborated with cross-functional teams to address client needs, resolve technical challenges, and deliver exceptional customer experiences.</p>
-                <a href="work-term-2.html">Work Term Report</a>
-            </div>
-            <div>
-                <h2>Technical Support Engineer Co-op | Summer 2025</h2>
+                <a href="work-term-2.html">Work term report</a>
+            </article>
+            <article>
+                <h3>Technical Support Engineer Co-op | Summer 2025</h3>
                 <p>
                     As a Technical Support Engineer at Pepper, I helped maintain our existing integration codebase ensuring that client applications updated as expected, and adding new integration logic as needed. I also assisted with testing a new AI tool to assist our team with triaging customer inbounds.</p>
-                <a href="work-term-3.html">Work Term Report</a>
-            </div>
+                <a href="work-term-3.html">Work term report</a>
+            </article>
         </div>
     </div>
 </div>
-<!-- -------------------potfolio------------------- -->
+
 <div id="portfolio">
     <div class="container">
-        <h1 class="sub-title">Projects</h1>
+        <h2 class="sub-title">Projects</h2>
         <div class="project-list">
-            <div class="work">
-                <img src="images/app.jpg">
-                <div class="layer">
+            <article class="project-card">
+                <div class="project-card__media">
+                    <img src="images/app.jpg" alt="Screenshot of the fitness booking app">
+                </div>
+                <div class="project-card__body">
                     <h3>Fitness Class Booking Mobile App</h3>
                     <p>
                         Built a full stack mobile app using React Native and Django to allow users to book fitness group classes at different studios.
                     </p>
-                    <a href="app.html"><img src="images/link.webp"></a>
+                    <a class="project-card__link" href="app.html">View project</a>
                 </div>
-            </div>
-            <div class="work">
-                <img src="images/web-design.jpg">
-                <div class="layer">
-                    <h3>Portfolio Website</h3>
-                    <p>This is the website you are looking at now, developed using HTML, CSS and Javascript</p>
-                    <a href="https://github.com/benholbrook1/benholbrook1.github.io"><img src="images/link.webp"></a>
+            </article>
+            <article class="project-card">
+                <div class="project-card__media">
+                    <img src="images/web-design.jpg" alt="Portfolio website preview">
                 </div>
-            </div>
-            <div class="work">
-                <img src="images/chess-board.jpg">
-                <div class="layer">
-                    <h3>Chess Game</h3>
-                    <p>Developed a chess game using Java following object oriented methodolgies, complete with a graphical interface</p>
-                    <a href="https://github.com/benholbrook1/Java-Chess"><img src="images/link.webp"></a>
+                <div class="project-card__body">
+                    <h3>Portfolio website</h3>
+                    <p>This is the website you are looking at now, developed using HTML, CSS and JavaScript</p>
+                    <a class="project-card__link" href="https://github.com/benholbrook1/benholbrook1.github.io">View on GitHub</a>
                 </div>
-            </div>
+            </article>
+            <article class="project-card">
+                <div class="project-card__media">
+                    <img src="images/chess-board.jpg" alt="Chess board graphic">
+                </div>
+                <div class="project-card__body">
+                    <h3>Chess game</h3>
+                    <p>Developed a chess game using Java following object oriented methodologies, complete with a graphical interface</p>
+                    <a class="project-card__link" href="https://github.com/benholbrook1/Java-Chess">View on GitHub</a>
+                </div>
+            </article>
         </div>
         <a href="https://github.com/benholbrook1/" class="button">See More</a>
     </div>
 </div>
 
- <!-- -------------------contact------------------- -->
-
 <div id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
+                <h2 class="sub-title">Contact Me</h2>
                 <div class="contacts">
                     <div class="contact-block">
-                        <img src="images/email-icon.png">
+                        <img src="images/email-icon.png" alt="">
                         <p>holbrook@uoguelph.ca</p>
                     </div>
                     <div class="contact-block">
-                        <img src="images/github-icon.png">
+                        <img src="images/github-icon.png" alt="">
                         <p>
-                            <a href="https://github.com/benholbrook1" target="_blank" style="text-decoration: none; color: inherit;">github.com/benholbrook1</a>
+                            <a href="https://github.com/benholbrook1" target="_blank" rel="noopener noreferrer">github.com/benholbrook1</a>
                         </p>
                     </div>
                     <div class="contact-block">
-                        <img src="images/linked-in-icon.png">
+                        <img src="images/linked-in-icon.png" alt="">
                         <p>
-                          <a href="https://linkedin.com/in/holbrook-ben" target="_blank" style="text-decoration: none; color: inherit;">linkedin.com/in/holbrook-ben</a>
+                          <a href="https://linkedin.com/in/holbrook-ben" target="_blank" rel="noopener noreferrer">linkedin.com/in/holbrook-ben</a>
                         </p>
                     </div>
                 </div>
@@ -162,26 +174,21 @@
         </div>
     </div>
 </div>
-    
-
-
 
 <script>
-
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link")
+    function opentab(tabname, el) {
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab")
+        for (var j = 0; j < tabcontents.length; j++) {
+            tabcontents[j].classList.remove("active-tab");
         }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab")
+        el.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
 </body>
 </html>
-
