@@ -41,7 +41,7 @@ a {
 .skip-link {
   position: absolute;
   left: -9999px;
-  z-index: 999;
+  z-index: 10002;
   padding: 0.75rem 1rem;
   background: var(--bg-elevated);
   color: var(--text);
@@ -82,6 +82,12 @@ nav {
   width: min(120px, 32vw);
   height: auto;
   display: block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a:has(> .logo):hover .logo,
+a:has(> .logo):focus-visible .logo {
+  transform: scale(1.03);
 }
 
 nav ul {
@@ -110,7 +116,7 @@ nav ul li a::after {
   position: absolute;
   left: 0;
   bottom: 0;
-  transition: width 0.35s ease;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 nav ul li a:hover::after {
@@ -132,25 +138,7 @@ nav ul li a:hover::after {
 }
 
 .header-text {
-  max-width: 40ch;
-}
-
-.header-text p {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.header-text h1 {
-  font-size: clamp(2.25rem, 6vw, 3.5rem);
-  margin-top: 0.75rem;
-  line-height: 1.1;
-}
-
-.header-text h1 span {
-  color: var(--accent);
+  max-width: 42ch;
 }
 
 .container {
@@ -194,11 +182,19 @@ nav ul li a:hover::after {
   flex: 1 1 min(100%, 560px);
 }
 
+.about-col-2 > p:first-of-type {
+  max-width: 62ch;
+}
+
 .sub-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 600;
   color: var(--text);
   margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
 }
 
 .tab-titles {

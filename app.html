@@ -8,11 +8,12 @@
   <title>Fitness Booking App | Ben Holbrook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="app-page.css">
+  <link rel="stylesheet" href="effects.css">
 </head>
 <body>
-  <div id="header">
+  <div id="header" class="with-nav-enter">
     <div class="container">
       <nav aria-label="Primary">
         <a href="index.html" aria-label="Home"><img src="images/BH.png" class="logo" alt="Ben Holbrook logo" width="140" height="56" /></a>
@@ -24,16 +25,17 @@
           <li><a href="images/resume_sept25.pdf">Resume</a></li>
         </ul>
       </nav>
-      <div class="header-text">
-        <p>Personal Project</p>
-        <h1>Fitness <span>Booking</span> App</h1>
+      <div class="header-text hero-entrance">
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-eyebrow">Personal Project</p>
+        <h1 class="hero-title">Fitness <span>Booking</span> App</h1>
       </div>
     </div>
   </div>
 
-  <section>
+  <section class="app-section reveal">
     <div class="container">
-      <div class="row">
+      <div class="row reveal-child">
         <div class="col-40">
           <div class="work" style="aspect-ratio:9/19.5">
             <img src="images/app-home.PNG" alt="App hero screenshot" />
@@ -54,10 +56,10 @@
     </div>
   </section>
 
-  <section id="screens">
+  <section id="screens" class="app-section reveal">
     <div class="container">
-      <h2 class="sub-title">Screens</h2>
-      <div class="scroller">
+      <h2 class="sub-title reveal-child">Screens</h2>
+      <div class="scroller reveal-child">
         <div class="screen-row" aria-label="Scroll to see more screens">
           <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-home.PNG" alt="Home" /></div>
           <div class="work" style="aspect-ratio:9/19.5"><img src="images/app-discover.PNG" alt="Discover classes" /></div>
@@ -69,10 +71,10 @@
     </div>
   </section>
 
-  <section id="tech">
+  <section id="tech" class="app-section reveal">
     <div class="container">
-      <h2 class="sub-title">Tech Stack</h2>
-      <div class="grid-cards">
+      <h2 class="sub-title reveal-child">Tech Stack</h2>
+      <div class="grid-cards reveal-child">
         <div class="card"><h3>Frontend</h3><p>React Native (Expo), TypeScript, React Query, Expo Router, i18next (with ICU), expo-localization</p></div>
         <div class="card"><h3>Backend</h3><p>Django REST Framework, Django Admin Page, PostgreSQL, Celery Tasks</p></div>
         <div class="card"><h3>Operations</h3><p>Dockerized development environment, Postman API environment</p></div>
@@ -80,10 +82,10 @@
     </div>
   </section>
 
-  <section>
+  <section class="app-section reveal">
     <div class="container">
-      <h2 class="sub-title">Key Design Choices</h2>
-      <div class="list">
+      <h2 class="sub-title reveal-child">Key Design Choices</h2>
+      <div class="list reveal-child">
         <div class="panel">JWT with <b>rotating refresh tokens</b> and short‑lived access tokens.</div>
         <div class="panel"><b>Server‑driven pagination & filtering</b> for large class catalogs.</div>
         <div class="panel"><b>i18next framework</b> to manage different app translations</div>
@@ -93,10 +95,10 @@
     </div>
   </section>
 
-  <section id="learnings">
+  <section id="learnings" class="app-section reveal">
     <div class="container">
-      <h2 class="sub-title">Challenges & Learnings</h2>
-      <div class="grid-cards">
+      <h2 class="sub-title reveal-child">Challenges & Learnings</h2>
+      <div class="grid-cards reveal-child">
         <div class="card"><h3>Timezone Management</h3><p>Store all timezones in the database in UTC and convert to local timezones when displaying to user</p></div>
         <div class="card"><h3>Analytics</h3><p>Created 2 separate Django models to store analytics data. Created one celery task to update a daily snapshot every minute and another task that runs nightly to move that data into a larger table which store daily recaps</p></div>
       </div>
@@ -106,5 +108,6 @@
   <footer>
     <div class="container">Want a deeper dive or a walkthrough? <a class="underline" href="mailto:holbrook@uoguelph.ca">Email me</a>.</div>
   </footer>
+  <script src="site.js"></script>
 </body>
 </html>
