@@ -179,3 +179,71 @@ ul li {
   font-weight: 400;
   margin: 0.5rem 0 0;
 }
+
+.reference-wrapper {
+  margin-top: 2rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  max-width: 65ch;
+}
+
+.reference-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.reference-label strong {
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.reference-citation {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.reference-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-word;
+  transition: color 0.2s ease;
+}
+
+.reference-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.work-term-4 #my-role .text ol > li {
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 1.25rem;
+}
+
+.work-term-4 #my-role .text ol > li:first-child {
+  margin-top: 0;
+}
+
+.work-term-4 #my-role .text ol p {
+  color: var(--text-muted);
+  font-weight: 400;
+  margin: 0.5rem 0 1rem;
+  max-width: 65ch;
+}
+
+.work-term-4 #employer .text > p {
+  margin-bottom: 0.25rem;
+}

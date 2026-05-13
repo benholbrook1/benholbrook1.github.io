@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Co-op work term report: Software development at Valency Inc., Winter 2026. Ben Holbrook, Software Engineering, University of Guelph.">
+    <title>Winter 2026 - Valency Inc | Ben Holbrook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="work-term-style.css">
+    <link rel="stylesheet" href="effects.css">
+</head>
+<body class="work-term-4">
+<a class="skip-link" href="#employer">Skip to content</a>
+<div id="header" class="wt-hero reveal is-visible">
+    <div class="container">
+        <div class="wt-header-top reveal-child">
+            <a href="index.html" class="wt-logo"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
+            <a href="index.html" class="wt-back">Back to portfolio</a>
+        </div>
+        <h1 class="page-title reveal-child">W26 @ Valency</h1>
+        <div class="text intro reveal-child">
+            <p>
+                In the Winter of 2026, I had the opportunity to work on the development team at Valency
+                Inc. In this report, I will give an overview of the work I accomplished and reflect on the
+                key takeaways from this experience.
+            </p>
+        </div>
+    </div>
+</div>
+<section id="employer" class="wt-section reveal" aria-labelledby="employer-heading">
+    <div class="container">
+        <h2 id="employer-heading" class="section-title reveal-child">Employer</h2>
+        <div class="image reveal-child">
+            <a href="https://www.valencyinc.com"><img src="images/valency.png" alt="Valency logo"></a>
+        </div>
+        <div class="text reveal-child">
+            <p>
+                Valency is a business to business software company specializing in project assurance for capital projects. The goal of project
+                assurance is to provide a company with confidence and predictability on whether a project will remain viable. Valency's key 
+                area of focus is on capital projects, which are any sort of large-scale, expensive investments that are made by a company. 
+                Some examples of capital projects would be an oil company investing in new drilling locations, or a tech company investing in 
+                building a new data center. 
+                <br><br>
+                Valency sells a product called Carve which provides standardized assessments, built for different industries, to assess the 
+                current status of a project. Carve contains a variety of assessment templates which cover all different phases of a project's
+                lifecycle. Along with these assessments, the Carve platform provides companies with benchmarking against both historical and industry 
+                data. This benchmarking provides customers with an idea of where they stand against other companies in their industry.
+                <br><br>
+                Valency is based in Waterloo, Ontario and has existed for over 13 years. Over that lifespan the team at Valency has assessed over
+                68 billion dollars in project value and their customers have used the Carve platform to assess an additional 65 billion dollars 
+                of annual capital expenditures.
+            </p>
+            <div class="reference-wrapper">
+                <p class="reference-label"><strong>Reference: </strong></p>
+                <cite class="reference-citation">
+                    [1] Valency Inc., "About Valency," 2026. [Online]. Available: 
+                    <a href="https://valencyinc.com/about" target="_blank" class="reference-link">
+                        https://valencyinc.com/about
+                    </a>. [Accessed: April 27, 2026].
+                </cite>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="my-role" class="wt-section reveal" aria-labelledby="my-role-heading">
+    <div class="container">
+        <h2 id="my-role-heading" class="section-title reveal-child">My Role</h2>
+        <div class="text reveal-child">
+            <p>
+                At Valency, I worked on the develpment team which was responsible for improving Valency's main product, Carve.
+                In this 4 month term, my primary tasks were: developing an end-to-end automated test suite and the deployment of a new 
+                self-paced training site.
+                <br><br>
+                To develop an end-to-end test suite, I utilized Playwright, which is an open source framework developed by Microsoft used
+                for cross-browser automation and web application testing. Using the Playwright framework, I set up over 40 automated "smoke
+                tests" written in JavaScript which were divided into a light suite and a heavy suite. The light suite of tests covered the
+                main workflows in Carve, particularly conducting each major type of assessment. The heavy suite included tests that ran for each 
+                of the 5 user types that exist in Carve.
+                <br><br>
+                While developing these test cases I had a couple main takeaways:
+            </p>
+            <ol>
+                <li>
+                    Testing in my local environment vs development environments
+                </li>
+                <p>
+                    Locally I would have a test case that seemed to work flawlessly, never running into any issues. But as soon as the same test ran in
+                    our development environment things behaved differently. I learned that local environments often hide race conditions
+                    because they don't have to deal with the same sort of network latency and resource constraints of an application deployed
+                    on the internet. This taught me how important it is to build redundancy into software to handle the realities of production
+                    software.
+                </p>
+                <li>
+                    Modularization is key for developing test cases at scale
+                </li>
+                <p>
+                    My initial approach to developing these test cases was that I wanted to get a proof of concept test case complete as quickly as possible.
+                    I put together a series of instructions and very quickly I came to realize how much duplicate code was being created. Rather than powering
+                    through, I took time to refactor my approach splitting components of tests into classes and their respective functions. This approach was much
+                    easier to maintain and further test case implementations became much easier as I already had some of the baseline functions complete for parts of shared
+                    workflows.
+                </p>
+            </ol>
+            <p>
+                The other project that I worked on this term was deploying an external LMS (Learning Management System) to host new training content.
+                This project involved determining which LMS we wanted to use, I investigated different options before deciding on utilizing Moodle, 
+                an open source LMS that we could customize exactly to meet our needs. 
+                <br><br>
+                Along with the deployment of this LMS, I also took over the development of our integration with a platform called HeyGen to generate customized
+                training videos using generative AI. In our application, we configured around 70 different variables of common industry concepts and we
+                allowed customers to edit those variables to align with the terms that they use when describing those concepts. This ensured that the content
+                we delivered aligned with each customer's required personalizations and that our content was dynamic and could be easily adjusted in the future
+                to adapt to future industry trends in the area of project assurance.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="goals" class="wt-section reveal" aria-labelledby="goals-heading">
+    <div class="container">
+        <h2 id="goals-heading" class="section-title reveal-child">Goals</h2>
+        <div class="image reveal-child">
+            <a href="https://www.valencyinc.com"><img src="images/desk.jpg" alt="An image of my desk in the Valency Office"></a>
+            <p>An image of my desk in the Valency Office</p>
+        </div>
+        <div class="text reveal-child">
+            <ol>
+                <li>Gain Experience with DevOps</li>
+                <br>
+                <p>
+                    During my term, I gained valuable DevOps experience through taking part in 2 major releases for our application, Carve, and 
+                    through learning how to deploy an open source Learning Management System (LMS). I learned about how deployments are managed in 
+                    Heroku and had hands-on experience deploying our LMS with a platform called Northflank.
+                </p>
+                <br>
+                <li>Use clear communication with my team</li>
+                <br>
+                <p>
+                    To meet this goal I made a point to maintain regular contact with my team, updating them on the work I was completing and also
+                    asking questions right away once I had determined that something was a blocker for myself. I had opportunities to do this due 
+                    to my in-person working arrangement as our development team all worked out of the same room and additionally I was able to give 
+                    more formal updates in weekly one-on-one meetings with my supervisor and weekly sprint planning meetings.
+                </p>
+                <br>
+                <li>Organize my work effectively</li>
+                <br>
+                <p>
+                    In this term our team used Jira to manage outstanding tasks and I had the opportunity to continue to learn that software and
+                    how to navigate around Jira to understand and prioritize my assigned tasks. When I had large chunks of work to complete, I 
+                    would break down the task into smaller sections and write down each step to keep myself organized and for more conceptual tasks
+                    I organized my thoughts on an online mind-map so I could visualize which parts of a given workflow I needed to make updates to.
+                </p>
+            </ol>
+        </div>
+    </div>
+</section>
+<section id="conclusion" class="wt-section reveal" aria-labelledby="conclusion-heading">
+    <div class="container">
+        <h2 id="conclusion-heading" class="section-title reveal-child">Conclusion</h2>
+        <div class="text reveal-child">
+            <p>
+                To conclude, this experience at Valency has been an excellent stepping stone for me as I look to build up my career as a
+                Software Engineer. I really enjoyed working with the entire team at Valency and feel proud of the work that we were able to 
+                accomplish this term. This term has validated to me how rewarding the problem solving and creative side of software engineering
+                can be. My work days have flown by, and I end each day excited about what we are building. I am grateful that I will get to continue 
+                in this role for another semester and continue to make an impact in this exciting role.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="acknowledgements" class="wt-section reveal" aria-labelledby="ack-heading">
+    <div class="container">
+        <h2 id="ack-heading" class="section-title reveal-child">Acknowledgements</h2>
+        <div class="text reveal-child">
+            <p>
+                I would like to give a big thank you to my supervisor Brad for his mentorship throughout this role. Brad is a strong leader 
+                who juggles a lot during the work day, but I never felt like I was on my own and always was able to seek advice when needed.
+                Working under Brad I felt trusted to get work done and that the work I was doing was meaningful and making an impact for our
+                team.
+                <br><br>
+                I would also like to acknowledge the rest of the development team, Eli and Erica for their help with my initial learning of 
+                the product and how our software (Carve) worked. They were always willing to lend a hand and explain any sort of concept to 
+                me
+                <br><br>
+                Finally, I would like to thank the whole team at Valency who has created such a welcoming and healthy work environment. I have
+                seen great examples of people who are dedicated and work hard but who also want everyone around them to succeed. I am truly thankful
+                that I have gotten the chance to work with each of these team members.
+            </p>
+        </div>
+    </div>
+</section>
+<script src="site.js"></script>
+</body>
+</html>
