@@ -181,10 +181,6 @@
   color: var(--text-muted);
 }
 
-.model-status.is-ready {
-  color: #6ecf8e;
-}
-
 .model-status.is-error {
   color: #e07070;
 }

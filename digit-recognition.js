@@ -26,6 +26,13 @@
   previewCanvas.height = 28;
 
   function setStatus(text, className) {
+    if (!text) {
+      statusEl.hidden = true;
+      statusEl.textContent = "";
+      statusEl.className = "model-status";
+      return;
+    }
+    statusEl.hidden = false;
     statusEl.textContent = text;
     statusEl.className = "model-status" + (className ? " " + className : "");
   }
@@ -165,7 +172,7 @@
     try {
       setStatus("Loading model…", "");
       model = await tf.loadLayersModel("models/number-recognition/model.json");
-      setStatus("Model ready", "is-ready");
+      setStatus("");
       predictBtn.disabled = false;
     } catch (error) {
       console.error(error);
