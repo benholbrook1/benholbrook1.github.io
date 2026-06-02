@@ -195,8 +195,12 @@ body::before {
   transition-delay: 0.22s;
 }
 
+#portfolio.reveal.is-visible .project-list .project-card.reveal-child:nth-child(4) {
+  transition-delay: 0.28s;
+}
+
 #portfolio.reveal.is-visible .button.reveal-child {
-  transition-delay: 0.3s;
+  transition-delay: 0.36s;
 }
 
 #contact.reveal.is-visible .sub-title.reveal-child {

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Handwritten digit recognition with a TensorFlow CNN trained on MNIST. Draw a number in the browser and see live predictions." />
+  <title>Digit Recognition | Ben Holbrook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="digit-recognition.css">
+  <link rel="stylesheet" href="effects.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <nav aria-label="Primary">
+        <a href="index.html" aria-label="Ben Holbrook home"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#work-terms">Experience</a></li>
+          <li><a href="index.html#portfolio">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <div class="header-text hero-entrance">
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-eyebrow">Machine Learning</p>
+        <h1 class="hero-title">Handwritten <span>Digit</span> Recognition</h1>
+      </div>
+    </div>
+  </div>
+
+  <section id="main" class="app-section reveal">
+    <div class="container">
+      <div class="row reveal-child">
+        <div class="col-60">
+          <h2 class="sub-title">Overview</h2>
+          <div class="panel">
+            A convolutional neural network trained on the <b>MNIST</b> dataset to classify handwritten digits 0–9. The original project was built in Python with TensorFlow and OpenCV; this page runs the same model in the browser via <b>TensorFlow.js</b>.
+          </div>
+          <ul class="bullets">
+            <li><span>Accuracy</span> — 98.9% on the MNIST test set</li>
+            <li><span>Architecture</span> — 2 conv layers, max pooling, dense classifier</li>
+            <li><span>Preprocessing</span> — Bounding-box crop and centering to match MNIST format</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section reveal">
+    <div class="container">
+      <h2 class="sub-title reveal-child">Live Demo</h2>
+      <div class="demo-panel reveal-child">
+        <p>Draw a digit with your mouse or finger. The model uses the same MNIST preprocessing pipeline as the Python version: crop, resize, and center the drawing in a 28×28 grid.</p>
+        <div class="demo-layout">
+          <div>
+            <div class="canvas-wrap">
+              <canvas id="draw-canvas" aria-label="Drawing canvas for handwritten digits"></canvas>
+              <span class="canvas-hint">Draw here</span>
+            </div>
+            <div class="demo-actions">
+              <button type="button" class="primary" id="predict-btn">Predict</button>
+              <button type="button" id="clear-btn">Clear</button>
+            </div>
+            <p class="model-status" id="model-status">Loading model…</p>
+          </div>
+          <div>
+            <div class="prediction-display">
+              <div class="prediction-digit" id="prediction-digit" aria-live="polite">–</div>
+              <div class="prediction-meta" id="prediction-confidence">Draw a digit, then predict</div>
+            </div>
+            <div class="preview-wrap">
+              <span class="preview-label">28×28 input</span>
+              <canvas id="preview-canvas" width="28" height="28" aria-label="Preprocessed 28 by 28 pixel preview"></canvas>
+            </div>
+            <div class="confidence-list" aria-label="Confidence breakdown for digits 0 through 9">
+              <div class="confidence-row"><span>0</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>1</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>2</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>3</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>4</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>5</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>6</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>7</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>8</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+              <div class="confidence-row"><span>9</span><div class="confidence-bar"><span></span></div><span class="confidence-value">0.0%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section reveal">
+    <div class="container">
+      <h2 class="sub-title reveal-child">How It Works</h2>
+      <div class="grid-cards reveal-child">
+        <div class="card"><h3>Training</h3><p>Trained on 60,000 MNIST images with pixel values normalized to 0–1. The model learns spatial features through convolution and pooling layers before a dense classification head.</p></div>
+        <div class="card"><h3>Drawing</h3><p>The Python version uses OpenCV for a desktop drawing window. For the portfolio demo, the same preprocessing logic runs in JavaScript on an HTML canvas.</p></div>
+        <div class="card"><h3>Deployment</h3><p>The Keras model is exported to TensorFlow.js so visitors can draw digits and get predictions directly on GitHub Pages without a backend.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section reveal">
+    <div class="container">
+      <h2 class="sub-title reveal-child">Tech Stack</h2>
+      <div class="grid-cards reveal-child">
+        <div class="card"><h3>Python</h3><p>TensorFlow/Keras for training and evaluation, OpenCV for drawing and image preprocessing</p></div>
+        <div class="card"><h3>Web Demo</h3><p>TensorFlow.js, HTML Canvas, and vanilla JavaScript for in-browser inference</p></div>
+        <div class="card"><h3>Model</h3><p>Conv2D → MaxPool → Conv2D → MaxPool → Flatten → Dense(64) → Dense(10)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Questions about the model or demo? <a class="underline" href="mailto:holbrook@uoguelph.ca">Email me</a>.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="site.js"></script>
+  <script src="digit-recognition.js"></script>
+</body>
+</html>

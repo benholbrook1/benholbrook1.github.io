@@ -13,18 +13,24 @@
   <link rel="stylesheet" href="effects.css">
 </head>
 <body>
-  <div id="header" class="with-nav-enter">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
     <div class="container">
       <nav aria-label="Primary">
-        <a href="index.html" aria-label="Home"><img src="images/BH.png" class="logo" alt="Ben Holbrook logo" width="140" height="56" /></a>
+        <a href="index.html" aria-label="Ben Holbrook home"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
         <ul>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#work-terms">Experience</a></li>
           <li><a href="index.html#portfolio">Projects</a></li>
-          <li><a href="index.html#contact">Contact Me</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
           <li><a href="resume.html">Resume</a></li>
         </ul>
       </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
       <div class="header-text hero-entrance">
         <div class="hero-rule" aria-hidden="true"></div>
         <p class="hero-eyebrow">Personal Project</p>
@@ -33,7 +39,7 @@
     </div>
   </div>
 
-  <section class="app-section reveal">
+  <section id="main" class="app-section reveal">
     <div class="container">
       <div class="row reveal-child">
         <div class="col-40">
