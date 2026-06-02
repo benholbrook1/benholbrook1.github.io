@@ -1,4 +1,5 @@
 @import url("tokens.css");
+@import url("nav.css");
 
 *,
 *::before,
@@ -36,91 +37,6 @@ a {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  z-index: 10002;
-  padding: 0.75rem 1rem;
-  background: var(--bg-elevated);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10, 10, 10, 0.92);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(10px);
-}
-
-.site-header .container {
-  width: var(--container);
-  margin: 0 auto;
-  padding: 0 4vw;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  min-height: var(--header-h);
-  gap: 0.5rem 1rem;
-}
-
-.logo {
-  width: min(120px, 32vw);
-  height: auto;
-  display: block;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-a:has(> .logo):hover .logo,
-a:has(> .logo):focus-visible .logo {
-  transform: scale(1.03);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 1.25rem;
-  justify-content: flex-end;
-}
-
-nav ul li a {
-  color: var(--text);
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  position: relative;
-  padding: 0.35rem 0;
-}
-
-nav ul li a::after {
-  content: "";
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-nav ul li a:hover::after {
-  width: 100%;
 }
 
 .hero {
@@ -440,14 +356,6 @@ nav ul li a:hover::after {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
-
-@media (max-width: 700px) {
-  nav ul {
-    width: 100%;
-    justify-content: flex-start;
-  }
-}
-
 
 .skills-rows {
   margin-top: 1.25rem;

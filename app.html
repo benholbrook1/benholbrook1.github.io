@@ -16,9 +16,17 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container">
-      <nav aria-label="Primary">
-        <a href="index.html" aria-label="Ben Holbrook home"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
-        <ul>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="nav-brand" aria-label="Ben Holbrook home"><img src="images/BH.png" class="logo" width="120" height="48" alt="Ben Holbrook"></a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open menu">
+          <span class="nav-toggle__icon" aria-hidden="true">
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+          </span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="site-nav-menu" class="nav-menu">
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#work-terms">Experience</a></li>
           <li><a href="index.html#portfolio">Projects</a></li>
@@ -114,6 +122,7 @@
   <footer>
     <div class="container">Want a deeper dive or a walkthrough? <a class="underline" href="mailto:holbrook@uoguelph.ca">Email me</a>.</div>
   </footer>
+  <script src="nav.js"></script>
   <script src="site.js"></script>
 </body>
 </html>
